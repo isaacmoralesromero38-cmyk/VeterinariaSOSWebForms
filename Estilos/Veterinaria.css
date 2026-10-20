@@ -1,0 +1,290 @@
+﻿/* =========================================
+   VETERINARIA SOS - ESTILOS GENERALES
+   Paleta de colores de referencia
+   ========================================= */
+
+:root {
+    --dorado: #E7A84E;
+    --naranja: #D96C2C;
+    --verde: #3E8E7E;
+    --azul-petroleo: #274C56;
+    --crema: #F6E2B3;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --fondo: #FFF9EE;
+    --texto: #263238;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.contenedor {
+    width: min(1100px, 94%);
+    margin: 0 auto;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* ENCABEZADOS */
+
+.encabezado {
+    background: var(--azul-petroleo);
+    color: var(--blanco);
+    padding: 22px;
+}
+
+    .encabezado h1 {
+        margin: 0;
+        font-size: 30px;
+    }
+
+    .encabezado p {
+        margin: 6px 0 0;
+    }
+
+/* PANELES Y FORMULARIOS */
+
+.panel {
+    background: var(--blanco);
+    border: 1px solid #E8DDC8;
+    border-radius: 14px;
+    padding: 24px;
+    margin: 24px auto;
+    box-shadow: 0 5px 18px rgba(39, 76, 86, 0.08);
+}
+
+    .panel h2 {
+        color: var(--azul-petroleo);
+        margin-top: 0;
+    }
+
+.formulario-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    font-weight: 600;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #C9D5D1;
+    border-radius: 8px;
+    background: var(--blanco);
+}
+
+    .campo input:focus,
+    .campo select:focus,
+    .campo textarea:focus {
+        outline: 2px solid var(--verde);
+        outline-offset: 1px;
+    }
+
+.campo textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* BOTONES */
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-weight: 600;
+}
+
+.btn-negro {
+    color: var(--blanco);
+    background: var(--negro);
+}
+
+    .btn-negro:hover {
+        background: var(--azul-petroleo);
+    }
+
+.btn-verde {
+    color: var(--blanco);
+    background: var(--verde);
+}
+
+.btn-dorado {
+    color: var(--negro);
+    background: var(--dorado);
+}
+
+/* MENSAJES */
+
+.mensaje {
+    display: block;
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.mensaje-error {
+    color: #8B1E1E;
+    background: #FCE8E6;
+}
+
+.mensaje-exito {
+    color: #175B3A;
+    background: #E5F5EA;
+}
+
+/* PANTALLA DE INGRESO */
+
+.login-fondo {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: linear-gradient( 125deg, var(--crema), var(--dorado), var(--verde) );
+}
+
+.login-tarjeta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: min(850px, 100%);
+    min-height: 440px;
+    overflow: hidden;
+    background: var(--blanco);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.login-marca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    text-align: center;
+    color: var(--azul-petroleo);
+    background: linear-gradient(150deg, var(--crema), var(--verde));
+}
+
+    .login-marca h1 {
+        font-size: 34px;
+        margin: 12px 0;
+    }
+
+    .login-marca p {
+        margin: 0;
+    }
+
+.login-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 38px;
+}
+
+    .login-formulario h2 {
+        color: var(--azul-petroleo);
+        margin-top: 0;
+    }
+
+    .login-formulario .campo {
+        margin-bottom: 18px;
+    }
+
+    .login-formulario .btn {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+/* TABLAS */
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .tabla th,
+    .tabla td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #E8DDC8;
+    }
+
+    .tabla th {
+        color: var(--blanco);
+        background: var(--azul-petroleo);
+    }
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 700px) {
+    .login-tarjeta {
+        grid-template-columns: 1fr;
+    }
+
+    .login-marca {
+        padding: 28px 20px;
+    }
+
+    .login-formulario {
+        padding: 25px;
+    }
+
+    .formulario-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .encabezado h1 {
+        font-size: 25px;
+    }
+}
