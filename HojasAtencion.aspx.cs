@@ -531,7 +531,7 @@ namespace VeterinariaSOSWebForms
 
             return usuario;
         }
-
+         ruta
         private void LimpiarFormulario()
         {
             hfIdHoja.Value = "";
